@@ -13,9 +13,9 @@ if [ -d "$directoryPath" ] && [ -r "$directoryPath" ]
 then
     for file in ${directoryPath}*
     do 
-        if [ -f "$file" ]
-        then 
-            echo "File Name $(basename ${file})"
+        if [ -f "$file" ] && [[ $(basename ${file}) == c* ]] && [[ $(basename ${file}) == *.txt ]]
+        then  
+                echo "Found match $(basename ${file})" 
         fi
     done
 else
